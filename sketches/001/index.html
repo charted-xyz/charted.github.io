@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Charted.xyz - Data Visualization, Scrollytelling, Generative Art</title>
+    <meta name="author" content="Andriy Gazin">
+    <meta property="og:title" content="Charted.xyz - Data Visualization, Scrollytelling, Generative Art" />
+    <meta property="og:description" content="P5.js sketch, generate random colors for your project" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="http://charted.xyz/sketches/001/001.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Charted.xyz" />
+    <meta property="og:url" content="https://charted.xyz/sketches/001" />
+    <meta property="twitter:creator" content="AndriyGazin" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+  </head>
+
+  <body>
+  </body>
+
+  <style media="screen">
+    body{
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Ubuntu Mono';
+      color: #282828;
+    }
+
+    #instructions{
+      display: inline-block;
+      text-shadow: 1px 1px 5px #D6D6D6;
+    }
+  </style>
+
+  <script type="text/javascript">
+  function setup(){
+
+    createCanvas(windowWidth, windowHeight);
+    frameRate(0.1);
+    noLoop();
+
+    instructions = createElement('h4', 'SPACE = new color || S = save current color');
+    instructions.id('instructions');
+    instructions.position(windowWidth/2 - instructions.width/2, windowHeight-windowHeight/10);
+
+  };
+
+  function draw() {
+
+    let r = random(0, 256);
+    let g = random(0, 256);
+    let b = random(0, 256);
+
+    background(r, g, b);
+
+    rectMode(CENTER);
+    textFont('Share Tech');
+    textSize(100);
+    textStyle(BOLD);
+    textAlign(CENTER);
+
+    let rh = hex(floor(r), 2);
+    let gh = hex(floor(g), 2);
+    let bh = hex(floor(b), 2);
+    txt = '#' + rh + gh + bh;
+
+    fill('#D6D6D6');
+    noStroke();
+    text(txt, windowWidth/2 + 2, windowHeight/2 + 2);
+
+    fill('#282828');
+    noStroke();
+    text(txt, windowWidth/2, windowHeight/2);
+
+  };
+
+  function windowResized() {
+
+    resizeCanvas(windowWidth, windowHeight);
+    instructions.position(windowWidth/2 - instructions.width/2, windowHeight-windowHeight/10);
+    noLoop();
+
+  }
+
+  function keyPressed() {
+
+    if(keyCode === 32) {
+
+      loop();
+      noLoop();
+
+    } else if(keyCode === 83) {
+
+      saveFrames(txt, 'png', 1, 1);
+
+    }
+
+    return false
+
+  }
+
+  function keyReleased() {
+
+    noLoop();
+
+  }
+
+  function touchStarted() {
+
+    loop();
+    noLoop();
+
+  };
+
+  function touchEnded() {
+
+    noLoop();
+
+  }
+
+  </script>
+</html>
