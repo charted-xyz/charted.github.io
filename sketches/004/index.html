@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Charted.xyz - Data Visualization, Scrollytelling, Generative Art</title>
+  <meta property="og:title" content="Charted.xyz - Data Visualization, Scrollytelling, Generative Art" />
+  <meta property="og:description" content="P5.js sketch, spiraling" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://charted.xyz/sketches/004/004.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Charted.xyz" />
+  <meta name="author" content="Andriy Gazin">
+  <meta property="og:url" content="https://charted.xyz/sketches/004/" />
+  <meta property="twitter:creator" content="AndriyGazin" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+  <style media="screen">
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  canvas {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div id="sketch">
+  </div>
+</body>
+<script type="text/javascript">
+
+let angle = 10.0;
+let scalar = 25;
+let inc = 0.1;
+let b = 53;
+let width = 1366;
+let height = 584;
+
+function setup() {
+  createCanvas(width, height);
+  pixelDensity(2);
+  colorMode(HSB);
+  background('white');
+  noStroke();
+  fill(190, 30, 52.9);
+}
+
+function draw() {
+  let x = width/2 + cos(angle) * scalar;
+  let y = height/2 + sin(angle) * scalar;
+  let factor = 30;
+
+  circle(x, y, dist(x, y, width/2, height/2)/factor);
+
+  angle+=0.7;
+  scalar+=inc;
+
+  if(y > 534) {
+    inc*=-1;
+    factor+=10;
+    b +=0.5;
+    fill(190, 30, b);
+    if(b >= 90) {
+      noLoop();
+    }
+  }
+}
+</script></html>
