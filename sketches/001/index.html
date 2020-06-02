@@ -15,7 +15,6 @@
   <meta property="twitter:creator" content="AndriyGazin" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
   <link rel="shortcut icon" href="icon.png" type="image/x-icon">
 </head>
@@ -38,15 +37,17 @@ body{
 </style>
 
 <script type="text/javascript">
+
+let shareTech;
+function preload() {
+  shareTech = loadFont('ShareTech-Regular.ttf');
+}
+
 function setup(){
 
   createCanvas(windowWidth, windowHeight);
   frameRate(0.1);
   noLoop();
-  textFont('Share Tech');
-  textSize(100);
-  textStyle(BOLD);
-  textAlign(CENTER);
 
   instructions = createElement('h4', 'SPACE = new color || S = save current color');
   instructions.id('instructions');
@@ -55,6 +56,11 @@ function setup(){
 };
 
 function draw() {
+
+  textFont(shareTech);
+  textSize(100);
+  textStyle(BOLD);
+  textAlign(CENTER);
 
   let r = random(0, 256);
   let g = random(0, 256);
