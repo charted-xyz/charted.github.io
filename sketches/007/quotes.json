@@ -1,0 +1,38 @@
+[
+    {
+        "text": "A drawing cannot be edited. Or, more specifically, it cannot be edited down or operated on, only built up",
+        "source": "Computational Drawing, From Foundational Exercises to Theories of Representation",
+        "author": "Carl Rostritto",
+        "url": "http://lostritto.com/book"
+    },
+    {
+        "text": "The data is a simplification — an abstraction — of the real world. So when you visualize data, you visualize an abstraction of the world. Visualization is an abstraction of data, so in the end, you end up with an abstraction of an abstraction",
+        "source": "Data Points, Visualization that Means Something",
+        "author": "Nathan Yau",
+        "url": "https://flowingdata.com/books/"
+    },
+    {
+        "text": "Data visualization is part art and part science. The challenge is to get the art right without getting the science wrong, and vice versa",
+        "source": "Fundamentals of Data Visualization, A Primer on Making Informative and Compelling Figures ",
+        "author": "Claus O. Wilke",
+        "url": "https://serialmentor.com/dataviz/"
+    },
+    {
+        "text": "A fundamental principle of design is to consider multiple alternatives and then choose the best, rather than to immediately fixate on one solution without considering any alternatives",
+        "source": "Visualization Analysis and Design",
+        "author": "Tamara Munzner",
+        "url": "https://www.cs.ubc.ca/~tmm/vadbook/"
+    },
+    {
+        "text": "Their struggles to choose a visualization stem from a lack of clarity about which attributes of the data are most important and how those attributes relate to one another",
+        "source": "Making Data Visual, A Practical Guide to Using Visualization for Insight",
+        "author": "Danyel Fisher, Miriah Meyer",
+        "url": "https://makingdatavisual.github.io/"
+    },
+    {
+        "text": "The designer shifts from being a performer of tasks to being a conductor, effectively orchestrating the decision-making process of the computer. This is what generative design is all about: iteratively developing different processes and then selecting those that produce the most visually compelling results",
+        "source": "Generative Design, Visualize, Program, and Create with JavaScript in p5.js",
+        "author": "Benedikt Gross, Hartmut Bohnacker, Julia Laub, Claudius Lazzeroni",
+        "url": "http://www.generative-gestaltung.de/"
+    }
+]

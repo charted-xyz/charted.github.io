@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charted.xyz - Data Visualization, Scrollytelling, Generative Art</title>
+    <meta property="og:title" content="Charted.xyz - Data Visualization, Scrollytelling, Generative Art" />
+    <meta property="og:description" content="Charted.xyz - Data Visualization, Scrollytelling, Generative Art" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://charted.xyz/sketches/007/007.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Charted.xyz" />
+    <meta name="author" content="Andriy Gazin">
+    <meta property="og:url" content="https://charted.xyz" />
+    <meta property="twitter:creator" content="AndriyGazin" />
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>something to think about</title>
+</head>
+
+<body>
+    <css-doodle>
+        :doodle {
+        @grid: 50 / 100vh;
+        overflow: hidden;
+        }
+        margin: -.5px;
+        @random {
+        border-top: 0.5px solid #81858C;
+        }
+        @random {
+        border-left: 0.5px solid #81858C;
+        }
+        transform: rotate(@p(±45deg))
+    </css-doodle>
+    <section>
+        <container>
+            <p>~ ~ ~</p>
+            <blockquote id='quote' cite="url">
+                A drawing cannot be edited. Or, more specifically, it cannot be edited down or operated on, only built
+                up
+            </blockquote>
+            <p>~ ~ ~</p>
+            <cite id='source'>Computational Drawing, From Foundational Exercises to Theories of Representation</cite>
+            <p id='author' itemprop="name">Carl Rostritto</p>
+            <button onclick="updateText()">&#10226;</button>
+        </container>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
