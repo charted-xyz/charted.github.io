@@ -139,7 +139,8 @@
         {
           "mark": "circle",
           "selection": {
-            "brush": { "type": "interval", "encodings": ["x"] }
+            "brush": { "type": "interval", "encodings": ["x"] },
+            "point": {"type": "single", "on": "click", "fields": ["full_name"]}
           },
           "transform": [
             { "calculate": "datum.label-0.5", "as": "label" }
@@ -190,7 +191,7 @@
             },
 
             "opacity": {
-              "condition": { "selection": "brush", "value": 0.9 },
+              "condition": { "selection": {"or": ["brush", "point"]}, "value": 0.9 },
               "value": 0.25
             },
 
