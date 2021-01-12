@@ -6,7 +6,8 @@
   <title>Чоловіки та жінки у Верховній Раді України - Charted.xyz</title>
   <meta name="author" content="Andriy Gazin">
   <meta property="og:title" content="Чоловіки і жінки у Верховній Раді України - Charted.xyz" />
-  <meta property="og:description" content="Розподіл депутатів Верховної Ради України за віком набуття повноважень та статтю" />
+  <meta property="og:description"
+    content="Розподіл депутатів Верховної Ради України за віком набуття повноважень та статтю" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image" content="https://charted.xyz/charts/mps/mps.png" />
@@ -21,54 +22,59 @@
   <link rel="shortcut icon" href="icon.png" type="image/x-icon">
 
   <style media="screen">
-  body {
-    display: grid;
-    grid-template-columns: 0.5fr 4fr 0.5fr;;
-    font-family: "Ubuntu Condensed";
-    font-size: 14;
-    color: #3A3F4A;
-    background-color: #F3F7F7;
-  }
+    body {
+      display: grid;
+      grid-template-columns: 0.5fr 4fr 0.5fr;
+      ;
+      font-family: "Ubuntu Condensed";
+      font-size: 14;
+      color: #3A3F4A;
+      background-color: #F3F7F7;
+    }
 
-  .vis-header {
-    grid-column: 2;
-    padding-left: 10px;
-  }
+    .vis-header {
+      grid-column: 2;
+      padding-left: 10px;
+    }
 
-  .vis-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 0px;
-    padding: 0px;
-    line-height: 0.5;
-  }
+    .vis-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 0px;
+      padding: 0px;
+      line-height: 0.5;
+    }
 
-  #vis {
-    grid-column: 2;
-    justify-content: center;
-    padding: 0px;
-  }
+    #vis {
+      grid-column: 2;
+      justify-content: center;
+      padding: 0px;
+    }
 
-  .vis-footer {
-    grid-column: 2;
-    text-align: right;
-    font-size: 12px;
-    padding: 0px;
-  }
+    .vis-footer {
+      grid-column: 2;
+      text-align: right;
+      font-size: 12px;
+      padding: 0px;
+    }
 
-  #vg-tooltip-element.vg-tooltip {
-    font-family: "Ubuntu Condensed";
-    font-size: 13px;
-    color: #3A3F4A;
-  }
-
+    #vg-tooltip-element.vg-tooltip {
+      font-family: "Ubuntu Condensed";
+      font-size: 13px;
+      color: #3A3F4A;
+    }
   </style>
 </head>
 
 <body>
   <div class="vis-header">
-    <p class="vis-title"><span style="color:#66c2a5">Чоловіки</span> і <span style="color:#fc8d62">жінки</span> у Верховній Раді</p>
-    <p>Одна точка на графіку позначає одного депутата чи депутатку у Верховній Раді України. Положення точки на осі Х позначає вік на момент набуття повноважень. Вертикальні лінії позначають медіанний вік на момент набуття повноважень для кожного скликання Верховної Ради <span title="Кількість людей у скликаннях не однакова (і може бути більшою за 450), оскільки тут враховані всі, хто був депутатом чи депутаткою протягом певного скликання" style="font-size: 16px">ℹ</span></p>
+    <p class="vis-title"><span style="color:#66c2a5">Чоловіки</span> і <span style="color:#fc8d62">жінки</span> у
+      Верховній Раді</p>
+    <p>Одна точка на графіку позначає одного депутата чи депутатку у Верховній Раді України. Положення точки на осі Х
+      позначає вік на момент набуття повноважень. Вертикальні лінії позначають медіанний вік на момент набуття
+      повноважень для кожного скликання Верховної Ради <span
+        title="Кількість людей у скликаннях не однакова (і може бути більшою за 450), оскільки тут враховані всі, хто був депутатом чи депутаткою протягом певного скликання"
+        style="font-size: 16px">ℹ</span></p>
   </div>
   <div id="vis">
   </div>
@@ -79,187 +85,195 @@
 
 <script type="text/javascript">
 
-let chart = {"$schema":"https://vega.github.io/schema/vega-lite/v4.json",
-"data": {"url": "mps.csv"},
-"contains": "padding",
-"width": "container",
-"background": "#F3F7F7",
-"columns": 3,
-"facet": {
-  "title": false,
-  "type": "ordinal",
-  "field": "years",
-  "spacing": 40,
-  "header": {
-    "labelFont": "Ubuntu Mono",
-    "labelColor": "#3A3F4A",
-    "labelAnchor": "start",
-    "labelOrient": "top",
-    "labelFontSize": 13
-  }
-},
-
-"spec": {
-  "layer": [
-
-    // rule
-
-    {
-      "mark": {
-        "type": "rule",
-        "tooltip": null
-      },
-
-      "encoding": {
-        "x": {
-          "aggregate": "median",
-          "field": "age_at_start",
-          "type": "quantitative"
-        },
-        "color": {
-          "value": "#3A3F4A"
-        },
-
-        "size": {
-          "value": 1
-        }
+  let chart = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": { "url": "mps.csv" },
+    "contains": "padding",
+    "width": "container",
+    "background": "#F3F7F7",
+    "columns": 3,
+    "facet": {
+      "title": false,
+      "type": "ordinal",
+      "field": "years",
+      "spacing": 40,
+      "header": {
+        "labelFont": "Ubuntu Mono",
+        "labelColor": "#3A3F4A",
+        "labelAnchor": "start",
+        "labelOrient": "top",
+        "labelFontSize": 13
       }
     },
 
-    // circle
+    "spec": {
 
-    {
-      "mark": "circle",
-      "selection": {
-        "brush": {"type": "interval", "encodings": ["x"]}
-      },
-      "transform":[
-        {"calculate": "datum.label-0.5", "as": "label"}
-      ],
-      "encoding": {
-        "x": {
-          "field": "age_at_start",
-          "type": "quantitative",
-          "scale": {
-            "domain": [18, 92],
-            "zero": false,
-            "nice": false
+      "layer": [
+
+        // rule
+
+        {
+          "mark": {
+            "type": "rule",
+            "tooltip": null
           },
-          "axis": {
-            "title": false,
-            "labelFont": "Ubuntu Mono",
-            "labelFontSize": 12,
-            "labelColor": "#3A3F4A",
-            "domainColor": "#5D646F",
-            "gridWidth": 0.5,
-            "gridOpacity": 0.5,
-            "gridDash": [1, 2],
-            "gridColor": "#5D646F"
-          }
-        },
-        "y": {
-          "title": false,
-          "field": "label",
-          "type": "quantitative",
-          "axis": {
-            "domain": false,
-            "ticks": false,
-            "labels": false,
-            "gridWidth": 0.5,
-            "gridOpacity": 0.5,
-            "gridDash": [1, 2],
-            "gridColor": "#5D646F"
+
+          "encoding": {
+            "x": {
+              "aggregate": "median",
+              "field": "age_at_start",
+              "type": "quantitative"
+            },
+            "color": {
+              "value": "#3A3F4A"
+            },
+
+            "size": {
+              "value": 1
+            }
           }
         },
 
-        "color": {
-          "field": "gender",
-          "type": "nominal",
-          "legend": false,
-          "scale": {
-            "range": ["#66c2a5", "#fc8d62"]
-          }
-        },
+        // circle
 
-        "opacity": {
-          "condition": {"selection": "brush", "value": 0.9},
-          "value": 0.25
-        },
-
-        "size": {
-          "value": 25
-        },
-
-        "tooltip": [
-          {
-            "field": "full_name",
-            "title": "ім\'я",
-            "type": "nominal"
+        {
+          "mark": "circle",
+          "selection": {
+            "brush": { "type": "interval", "encodings": ["x"] }
           },
-          {
-            "field": "year",
-            "type": "temporal",
-            "timeUnit": "year",
-            "title": "рік народження"
-          },
-          {
-            "field": "age_at_start",
-            "title": "вік на момент набуття повноважень",
-            "type": "nominal"
+          "transform": [
+            { "calculate": "datum.label-0.5", "as": "label" }
+          ],
+          "encoding": {
+            "x": {
+              "field": "age_at_start",
+              "type": "quantitative",
+              "scale": {
+                "domain": [18, 92],
+                "zero": false,
+                "nice": false
+              },
+              "axis": {
+                "title": false,
+                "labelFont": "Ubuntu Mono",
+                "labelFontSize": 12,
+                "labelColor": "#3A3F4A",
+                "domainColor": "#5D646F",
+                "gridWidth": 0.5,
+                "gridOpacity": 0.5,
+                "gridDash": [1, 2],
+                "gridColor": "#5D646F"
+              }
+            },
+            "y": {
+              "title": false,
+              "field": "label",
+              "type": "quantitative",
+              "axis": {
+                "domain": false,
+                "ticks": false,
+                "labels": false,
+                "gridWidth": 0.5,
+                "gridOpacity": 0.5,
+                "gridDash": [1, 2],
+                "gridColor": "#5D646F"
+              }
+            },
+
+            "color": {
+              "field": "gender",
+              "type": "nominal",
+              "legend": false,
+              "scale": {
+                "range": ["#66c2a5", "#fc8d62"]
+              }
+            },
+
+            "opacity": {
+              "condition": { "selection": "brush", "value": 0.9 },
+              "value": 0.25
+            },
+
+            "size": {
+              "value": 25
+            },
+
+            "tooltip": [
+              {
+                "field": "full_name",
+                "title": "ім\'я",
+                "type": "nominal"
+              },
+              {
+                "field": "year",
+                "type": "temporal",
+                "timeUnit": "year",
+                "title": "рік народження"
+              },
+              {
+                "field": "age_at_start",
+                "title": "вік на момент набуття повноважень",
+                "type": "nominal"
+              }
+            ]
           }
-        ]
+        },
+
+        // text
+        {
+          "mark": {
+            "type": "text",
+            "angle": 0,
+            "baseline": "right",
+            "align": "right",
+            "dy": -87.5,
+            "dx": -3,
+            "font": 'Ubuntu Mono',
+            "fontSize": 12,
+            "tooltip": null
+          },
+
+          "encoding": {
+            "x": {
+              "aggregate": "median",
+              "field": "age_at_start",
+              "type": "quantitative"
+            },
+
+            "text": {
+              "aggregate": "median",
+              "field": "age_at_start",
+              "type": "quantitative"
+            },
+
+            "color": {
+              "value": "#3A3F4A"
+            }
+          }
+        }
+      ]
+    },
+    "resolve": {
+      "axis": {
+        "x": "independent"
       }
     },
-
-    // text
-    {
-      "mark": {
-        "type": "text",
-        "angle": 0,
-        "baseline": "right",
-        "align": "right",
-        "dy": -87.5,
-        "dx": -3,
-        "font": 'Ubuntu Mono',
-        "fontSize": 12,
-        "tooltip": null
-      },
-
-      "encoding": {
-        "x": {
-          "aggregate": "median",
-          "field": "age_at_start",
-          "type": "quantitative"
-        },
-
-        "text": {
-          "aggregate": "median",
-          "field": "age_at_start",
-          "type": "quantitative"
-        },
-
-        "color": {
-          "value": "#3A3F4A"
-        }
+    "config": {
+      "view": {
+        "strokeWidth": 0
       }
     }
-  ]
-},
-"config": {
-  "view": {
-    "strokeWidth": 0
-  }
-}
-};
+  };
 
-chart.spec.layer[0].width = document.getElementById("vis").offsetWidth/3;
+  chart.spec.layer[0].width = document.getElementById("vis").offsetWidth / 3;
 
-let opts = {
-  "renderer": "svg",
-  "actions": false
-};
+  let opts = {
+    "renderer": "svg",
+    "actions": false
+  };
 
-vegaEmbed('#vis', chart, opts)
+  vegaEmbed('#vis', chart, opts)
 
 </script>
+
 </html>
