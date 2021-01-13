@@ -6,7 +6,7 @@
   <meta name="author" content="Andriy Gazin">
   <meta property="og:title" content="Споживання електрики в Україні - Charted.xyz" />
   <meta property="og:description"
-    content="Cпоживання електроенергії в Україні у 2019 році у розрізі днів року та годин доби" />
+    content="Cпоживання електроенергії в Україні у 2020 році у розрізі днів року та годин доби" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image" content="https://charted.xyz/charts/electricity/electricity.png" />
@@ -53,7 +53,7 @@
 
   let chart = {
     description:
-      "споживання електроенергії в Україні у 2019 році у розрізі днів року та годин доби",
+      "споживання електроенергії в Україні у 2020 році у розрізі днів року та годин доби",
     background: "#F7F7F7",
     width: 1000,
     height: 600,
@@ -73,7 +73,7 @@
       subtitleColor: '#3E454F'
     },
     data: {
-      url: "consumption.csv",
+      url: "consumption_date_hour.csv",
       type: "csv"
     },
     layer: [
@@ -85,7 +85,7 @@
         },
         encoding: {
           x: {
-            field: "date",
+            field: "datetime",
             type: "temporal",
             timeUnit: "yearmonthdate",
             axis: {
@@ -93,28 +93,33 @@
               orient: "top",
               labelAlign: "center",
               values: [
-                { year: 2019, month: 1, date: 15 },
-                { year: 2019, month: 2, date: 15 },
-                { year: 2019, month: 3, date: 15 },
-                { year: 2019, month: 4, date: 15 },
-                { year: 2019, month: 5, date: 15 },
-                { year: 2019, month: 6, date: 15 },
-                { year: 2019, month: 7, date: 15 },
-                { year: 2019, month: 8, date: 15 },
-                { year: 2019, month: 9, date: 15 },
-                { year: 2019, month: 10, date: 15 },
-                { year: 2019, month: 11, date: 15 },
-                { year: 2019, month: 12, date: 15 }
+                { year: 2020, month: 1, date: 15 },
+                { year: 2020, month: 2, date: 15 },
+                { year: 2020, month: 3, date: 15 },
+                { year: 2020, month: 4, date: 15 },
+                { year: 2020, month: 5, date: 15 },
+                { year: 2020, month: 6, date: 15 },
+                { year: 2020, month: 7, date: 15 },
+                { year: 2020, month: 8, date: 15 },
+                { year: 2020, month: 9, date: 15 },
+                { year: 2020, month: 10, date: 15 },
+                { year: 2020, month: 11, date: 15 },
+                { year: 2020, month: 12, date: 15 }
               ]
             }
           },
           y: {
             title: "година доби",
-            field: "hour",
-            type: "ordinal",
-            sort: [],
+            field: "datetime",
+            type: "temporal",
+            timeUnit: "hours", 
+            scale: {
+              reverse: true
+            },
             axis: {
-              values: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
+              format: "%H",
+              labelBaseline: "top",
+              values: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22],
             }
           },
           color: {
@@ -123,12 +128,13 @@
             type: "quantitative",
             aggregate: "mean",
             scale: {
-              domain: [12000, 24000],
+              domain: [10000, 24000],
               scheme: "redblue",
-              reverse: true
+              reverse: true,
+              domainMid: 16044
             },
             legend: {
-              values: [12000, 14000, 16000, 18000, 20000, 22000, 24000],
+              values: [10000, 12000, 14000, 16000, 18000, 20000, 22000, 24000],
               labelExpr: "datum.value / 1000"
             }
           }
@@ -137,17 +143,17 @@
       {
         data: {
           values: [
-            {date: "2019-02-01"},
-            {date: "2019-03-01"},
-            {date: "2019-04-01"},
-            {date: "2019-05-01"},
-            {date: "2019-06-01"},
-            {date: "2019-07-01"},
-            {date: "2019-08-01"},
-            {date: "2019-09-01"},
-            {date: "2019-10-01"},
-            {date: "2019-11-01"},
-            {date: "2019-12-01"},
+            {date: "2020-02-01"},
+            {date: "2020-03-01"},
+            {date: "2020-04-01"},
+            {date: "2020-05-01"},
+            {date: "2020-06-01"},
+            {date: "2020-07-01"},
+            {date: "2020-08-01"},
+            {date: "2020-09-01"},
+            {date: "2020-10-01"},
+            {date: "2020-11-01"},
+            {date: "2020-12-01"},
           ]
         },
         mark: {
@@ -172,11 +178,11 @@
       },
       {
         data: {
-          values: { text: "Дані: НЕК Укренерго | Візуалізація: Charted.xyz" }
+          values: { text: "Дані: НЕК Укренерго, 2020 рік | Візуалізація: Charted.xyz" }
         },
         mark: {
           type: "text",
-          dx: 335,
+          dx: 305,
           dy: 325,
           size: 14,
           color: "#3E454F"
@@ -201,6 +207,7 @@
       axis: {
         ticks: false,
         domain: false,
+        grid: false,
         title: false,
         labelColor: '#3E454F',
         labelPadding: 5,
