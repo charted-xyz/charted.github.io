@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Reel History - Charted.xyz - Data Visualization, Scrollytelling, Generative Art</title>
+    <meta property="og:title"
+        content="Reel History - Charted.xyz - Data Visualization, Scrollytelling, Generative Art" />
+    <meta property="og:description" content="Charted.xyz - Data Visualization, Scrollytelling, Generative Art" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://charted.xyz/sketches/010/movies.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Charted.xyz" />
+    <meta name="author" content="Andriy Gazin">
+    <meta property="og:url" content="https://charted.xyz" />
+    <meta property="twitter:creator" content="AndriyGazin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <article>
+        <main>
+            <div id="sidebar">
+                <p>
+                <H1>Reel History</H1>
+                </p>
+                <p>In her book <a href="https://www.amazon.com/Reel-History-World-According-Movies/dp/1782396489">'Reel
+                        History: The World According to the Movies'</a> Alex von Tunzelmann examines 104 movies to
+                    determine how accurate they depict historical events.</p>
+                <p>She grades every movie for History and Entertainment. You can explore the data with this interactive
+                    tool.</p>
+                <hr>
+                <button id="year">Sort by Year</button>
+                <button id="history">Sort by History grade</button>
+                <button id="entertainment">Sort by Entertainment grade</button>
+                <button id="histertainment">Sort by History & Entertainment grades</button>
+                <hr>
+                <article id="movieCard">
+                    <p><span id="movieTitle"></span><span id="movieDirector"></span><br><span
+                            id="releaseYear"></span><br><span id="historyGrade"></span><br><span
+                            id="entertainmentGrade"></span></p>
+                </article>
+            </div>
+            <div id="movies"></div>
+        </main>
+    </article>
+</body>
+<script src="script.js"></script>
+
+</html>
