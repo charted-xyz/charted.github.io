@@ -56,47 +56,80 @@ async function showMovies() {
 
     d3.select('#year').on('click', function () {
 
-        d3.select('#year').classed('selected', true)
-        d3.select('#history').classed('selected', false)
-        d3.select('#entertainment').classed('selected', false)
+        d3.select('#year').classed('selected', true);
+        d3.select('#history').classed('selected', false);
+        d3.select('#entertainment').classed('selected', false);
+
+        document.getElementById('movies').scrollTop = 0;
 
         d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.release_year, b.release_year))
+            .sort((a, b) => d3.descending(a.release_year, b.release_year));
     })
 
     d3.select('#history').on('click', function () {
 
-        d3.select('#year').classed('selected', false)
-        d3.select('#history').classed('selected', true)
-        d3.select('#entertainment').classed('selected', false)
-        d3.select('#histertainment').classed('selected', false)
+        d3.select('#year').classed('selected', false);
+        d3.select('#history').classed('selected', true);
+        d3.select('#entertainment').classed('selected', false);
+        d3.select('#histertainment').classed('selected', false);
+
+        document.getElementById('movies').scrollTop = 0;
 
         d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.history_numeric, b.history_numeric))
+            .sort((a, b) => d3.descending(a.history_numeric, b.history_numeric));
     })
 
     d3.select('#entertainment').on('click', function () {
 
-        d3.select('#year').classed('selected', false)
-        d3.select('#history').classed('selected', false)
-        d3.select('#entertainment').classed('selected', true)
-        d3.select('#histertainment').classed('selected', false)
+        d3.select('#year').classed('selected', false);
+        d3.select('#history').classed('selected', false);
+        d3.select('#entertainment').classed('selected', true);
+        d3.select('#histertainment').classed('selected', false);
+
+        document.getElementById('movies').scrollTop = 0;
 
         d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.entertainment_numeric, b.entertainment_numeric))
+            .sort((a, b) => d3.descending(a.entertainment_numeric, b.entertainment_numeric));
     })
 
     d3.select('#histertainment').on('click', function () {
 
-        d3.select('#year').classed('selected', false)
-        d3.select('#history').classed('selected', false)
-        d3.select('#entertainment').classed('selected', false)
-        d3.select('#histertainment').classed('selected', true)
+        d3.select('#year').classed('selected', false);
+        d3.select('#history').classed('selected', false);
+        d3.select('#entertainment').classed('selected', false);
+        d3.select('#histertainment').classed('selected', true);
+
+        document.getElementById('movies').scrollTop = 0;
 
         d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.histertainment_numeric, b.histertainment_numeric))
+            .sort((a, b) => d3.descending(a.histertainment_numeric, b.histertainment_numeric));
     })
 
 }
 
-showMovies();
+// check screen size on load, say sorry if screen size is too small for us to proceed
+
+function sorryNotSorry() {
+
+    if (d3.min([window.innerWidth, window.innerHeight]) < 760) {
+
+        d3.selectAll('main')
+            .remove();
+
+        d3.select('article')
+            .append('main')
+            .append('div')
+            .attr('class', 'sorrynotsorry')
+            .html("<p>I haven't figured out how this thing should work on small screens yet. While I'm working on that, you can check this sketch on your computer or take a look at <a href='https://charted.xyz'>my other stuff</a>.<br><br>Anyway, have a nice day!</p>");
+
+        d3.select('body')
+            .style('overflow', 'hidden');
+
+    } else {
+
+        showMovies();
+
+    }
+}
+
+window.onload = sorryNotSorry();
