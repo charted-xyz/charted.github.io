@@ -52,59 +52,28 @@ async function showMovies() {
 
         });
 
-    // reorder data on click
+    const buttons = d3.selectAll('#sidebar button');
+    let order = 'ascending';
 
-    d3.select('#year').on('click', function () {
+    buttons.on('click', function (event) {
 
-        d3.select('#year').classed('selected', true);
-        d3.select('#history').classed('selected', false);
-        d3.select('#entertainment').classed('selected', false);
-
-        document.getElementById('movies').scrollTop = 0;
-
-        d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.release_year, b.release_year));
-    })
-
-    d3.select('#history').on('click', function () {
-
-        d3.select('#year').classed('selected', false);
-        d3.select('#history').classed('selected', true);
-        d3.select('#entertainment').classed('selected', false);
-        d3.select('#histertainment').classed('selected', false);
+        d3.selectAll('#sidebar button').classed('selected', false).select('span').text('');
+        d3.select(event.currentTarget).classed('selected', true);
 
         document.getElementById('movies').scrollTop = 0;
 
-        d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.history_numeric, b.history_numeric));
-    })
-
-    d3.select('#entertainment').on('click', function () {
-
-        d3.select('#year').classed('selected', false);
-        d3.select('#history').classed('selected', false);
-        d3.select('#entertainment').classed('selected', true);
-        d3.select('#histertainment').classed('selected', false);
-
-        document.getElementById('movies').scrollTop = 0;
+        if (order === 'descending') {
+            order = 'ascending';
+            d3.select(event.currentTarget).select('span').text(' 🠕'); // &#129045
+        } else {
+            order = 'descending';
+            d3.select(event.currentTarget).select('span').text(' 🠗'); // &#129047
+        };
 
         d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.entertainment_numeric, b.entertainment_numeric));
-    })
+            .sort((a, b) => d3[order](a[d3.select(event.currentTarget).attr('id')], b[d3.select(event.currentTarget).attr('id')]));
 
-    d3.select('#histertainment').on('click', function () {
-
-        d3.select('#year').classed('selected', false);
-        d3.select('#history').classed('selected', false);
-        d3.select('#entertainment').classed('selected', false);
-        d3.select('#histertainment').classed('selected', true);
-
-        document.getElementById('movies').scrollTop = 0;
-
-        d3.selectAll('.movie')
-            .sort((a, b) => d3.descending(a.histertainment_numeric, b.histertainment_numeric));
-    })
-
+    });
 }
 
 // check screen size on load, say sorry if screen size is too small for us to proceed
@@ -113,7 +82,7 @@ function sorryNotSorry() {
 
     if (d3.min([window.innerWidth, window.innerHeight]) < 760) {
 
-        d3.selectAll('main')
+        d3.select('main')
             .remove();
 
         d3.select('article')
