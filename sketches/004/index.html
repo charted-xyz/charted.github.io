@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <title>Charted.xyz - Data Visualization, Scrollytelling, Generative Art</title>
@@ -16,59 +17,68 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
   <link rel="shortcut icon" href="icon.png" type="image/x-icon">
   <style media="screen">
-  html, body {
-    background-color: #F0F1F1;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
+    html,
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: grid;
+    }
 
-  canvas {
-    display: block;
-    margin: auto;
-  }
-</style>
+    div#sketch {
+      display: grid;
+      height: 100vh;
+      align-self: center;
+      justify-self: center;
+      align-items: center;
+    }
+  </style>
 </head>
+
 <body>
-  <div id="sketch">
-  </div>
+  <div></div>
+  <div id="sketch"></div>
+  <div></div>
 </body>
 <script type="text/javascript">
 
-let angle = 10.0;
-let scalar = 25;
-let inc = 0.1;
-let b = 53;
-let width = 1366;
-let height = 584;
+  let angle = 10.0;
+  let scalar = 25;
+  let inc = 0.1;
+  let b = 53;
+  let width = 1366;
+  let height = 584;
 
-function setup() {
-  createCanvas(width, height);
-  pixelDensity(2);
-  colorMode(HSB);
-  background('#F0F1F1');
-  noStroke();
-  fill(190, 30, 52.9);
-}
+  function setup() {
+    createCanvas(width, height).parent('sketch');
+    pixelDensity(2);
+    colorMode(HSB);
+    background('#f9f9f9');
+    noStroke();
+    fill(190, 30, 52.9);
+  }
 
-function draw() {
-  let x = width/2 + cos(angle) * scalar;
-  let y = height/2 + sin(angle) * scalar;
-  let factor = 30;
+  function draw() {
+    let x = width / 2 + cos(angle) * scalar;
+    let y = height / 2 + sin(angle) * scalar;
+    let factor = 30;
 
-  circle(x, y, dist(x, y, width/2, height/2)/factor);
+    circle(x, y, dist(x, y, width / 2, height / 2) / factor);
 
-  angle+=0.7;
-  scalar+=inc;
+    angle += 0.7;
+    scalar += inc;
 
-  if(y > 534) {
-    inc*=-1;
-    factor+=10;
-    b +=0.5;
-    fill(190, 30, b);
-    if(b >= 90) {
-      noLoop();
+    if (y > 534) {
+      inc *= -1;
+      factor += 10;
+      b += 0.5;
+      fill(190, 30, b);
+      if (b >= 90) {
+        noLoop();
+      }
     }
   }
-}
-</script></html>
+</script>
+
+</html>
