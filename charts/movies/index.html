@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ua" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Reel History - Charted.xyz</title>
+  <meta name="author" content="Andriy Gazin">
+  <meta property="og:title" content="Reel History - Charted.xyz" />
+  <meta property="og:description"
+    content="Find the best historical movies that are also (mostly) accurate" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://charted.xyz/charts/movies/movies.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Charted.xyz" />
+  <meta property="og:url" content="https://charted.xyz/charts/movies/" />
+  <meta property="twitter:creator" content="AndriyGazin" />
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+  <style media="screen">
+    body {
+      font-family: "Ubuntu Mono";
+      font-size: 14;
+      color: #3A3F4A;
+      background-color: #F9F9F9;
+      display: flex;
+    }
+
+    #vis {
+      justify-items: center;
+      align-items: center;
+      padding: 0px;
+      margin: auto;
+      border: 1px solid darkgray;
+    }
+
+    #vg-tooltip-element.vg-tooltip {
+      font-family: "Ubuntu Mono";
+      font-size: 13px;
+      color: #3A3F4A;
+      font-weight:lighter;
+    }
+
+    #vg-tooltip-element.vg-tooltip :nth-child(1) {
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="vis">
+  </div>
+</body>
+
+<script type="text/javascript">
+
+  let opts = {
+    "renderer": "svg",
+    "actions": false
+  };
+
+  vegaEmbed('#vis', chart, opts)
+
+</script>
+
+</html>
