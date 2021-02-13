@@ -1,191 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>Charted.xyz - Data Visualization, Generative Art, Creative Coding</title>
-  <meta property="og:title" content="Charted.xyz - Data Visualization, Generative Art, Creative Coding" />
-  <meta property="og:description" content="Charted.xyz - Data Visualization, Generative Art, Creative Coding" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image" content="https://charted.xyz/sketches/000/000.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Charted.xyz" />
-  <meta name="author" content="Andriy Gazin">
-  <meta property="og:url" content="https://charted.xyz" />
-  <meta property="twitter:creator" content="AndriyGazin" />
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
-  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
-  <style media="screen">
-    body {
-      font-family: "Ubuntu Mono";
-      color: #3E454F;
-      background-color: #f9f9f9;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      grid-gap: 20px;
-    }
-
-    .card {
-      border: 1.5px solid #a4a4a4;
-      border-radius: .1rem;
-    }
-
-    .bg-img {
-      background-size: cover;
-      min-height: 175px;
-      background-position: center;
-      background-color: #f9f9f9;
-    }
-
-    .content {
-      padding: 15px;
-    }
-
-    img {
-      max-height: 100%;
-      max-width: 100%;
-      border-radius: .1rem;
-      -webkit-filter: grayscale(20%);
-      filter: grayscale(20%);
-    }
-
-    img:hover {
-      -webkit-filter: grayscale(0%);
-      filter: grayscale(0%);
-    }
-
-    h3 {
-      display: inline-block;
-      text-decoration: underline;
-      text-decoration-color: #D11349;
-      margin-bottom: 0px;
-      color: #3E454F;
-    }
-
-    a:hover h3 {
-      color: #D11349;
-    }
-
-  </style>
+	<meta charset="utf-8" />
+	<title>Charted.xyz - Data Visualization, Generative Art, Creative Coding</title>
+	<meta property="og:title" content="Charted.xyz - Data Visualization, Generative Art, Creative Coding" />
+	<meta property="og:description" content="Charted.xyz - Data Visualization, Generative Art, Creative Coding" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image" content="https://charted.xyz/sketches/000/000.png" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Charted.xyz" />
+	<meta name="author" content="Andriy Gazin" />
+	<meta property="og:url" content="https://charted.xyz" />
+	<meta property="twitter:creator" content="AndriyGazin" />
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet" />
+	<link rel="shortcut icon" href="build/icon.png" type="image/x-icon" />
+	<link rel='stylesheet' href='global.css'>
+	<link rel='stylesheet' href='build/bundle.css'>
+	<script defer src='build/bundle.js'></script>
 </head>
+
 <body>
-  <div class="grid-container">
-
-    <div class="card">
-      <div class="bg-img"><a href="./apps/reel/"><img src="./apps/reel/movies.png" alt=""></a></div>
-      <div class="content">
-        <a href="./apps/reel/"><h3>App: Reel History</h3></a>
-        <p>Find the best historical movies that are also (mostly) accurate</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/000/"><img src="./sketches/000/000.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/000/"><h3>Sketch: 000</h3></a>
-        <p>Various generative sketches</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./charts/movies/"><img src="./charts/movies/movies.png" alt=""></a></div>
-      <div class="content">
-        <a href="./charts/movies/"><h3>Chart: Reel History</h3></a>
-        <p>Find the best historical movies that are also (mostly) accurate</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/001/"><img src="./sketches/001/001.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/001/"><h3>Sketch: 001</h3></a>
-        <p>Find colors for your next project</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/002/"><img src="./sketches/002/002.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/002/"><h3>Sketch: 002</h3></a>
-        <p>P5.js sketch, pulsing squares</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/003/"><img src="./sketches/003/003.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/003/"><h3>Sketch: 003</h3></a>
-        <p>P5.js sketch, pulsing bubbles</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/004/"><img src="./sketches/004/004.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/004/"><h3>Sketch: 004</h3></a>
-        <p>P5.js sketch, spiraling</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/005/"><img src="./sketches/005/005.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/005/"><h3>Sketch: 005</h3></a>
-        <p>P5.js sketch, sinewaves</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/006/"><img src="./sketches/006/006.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/006/"><h3>Sketch: 006</h3></a>
-        <p>P5.js sketch, rotating squares</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/008/"><img src="./sketches/008/008.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/008/"><h3>Sketch: 008</h3></a>
-        <p>P5.js sketch, racing arcs</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./sketches/009/"><img src="./sketches/009/009.png" alt=""></a></div>
-      <div class="content">
-        <a href="./sketches/009/"><h3>Sketch: 009</h3></a>
-        <p>P5.js sketch, rotating lines</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./charts/mps/"><img src="./charts/mps/mps.png" alt=""></a></div>
-      <div class="content">
-        <a href="./charts/mps/"><h3>Графік: Чоловіки і жінки у Верховній Раді</h3></a>
-        <p>Розподіл депутатів Верховної Ради за віком набуття повноважень та статтю</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./charts/electricity/"><img src="./charts/electricity/electricity.png" alt=""></a></div>
-      <div class="content">
-        <a href="./charts/electricity/"><h3>Графік: Споживання електрики в Україні</h3></a>
-        <p>Cпоживання електроенергії в Україні у 2020 році у розрізі днів року та годин доби</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="bg-img"><a href="./charts/population/"><img src="./charts/population/population.png" alt=""></a></div>
-      <div class="content">
-        <a href="./charts/population/"><h3>Графік: Природний приріст/скорочення населення</h3></a>
-        <p>Природний приріст/скорочення населення в Україні у 1989-2019 роках, на 1000 осіб</p>
-      </div>
-    </div>
-
-  </div>
 </body>
+
 </html>
