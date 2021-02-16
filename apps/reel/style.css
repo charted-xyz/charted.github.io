@@ -37,7 +37,8 @@ a:hover {
     padding: 1%;
     flex: 0 0 20%;
     background-color: #f9f9f9;
-    min-width: 200px;
+    min-width: 2fr;
+    font-size: 1rem;
 }
 
 #movies {
@@ -45,16 +46,14 @@ a:hover {
     overflow: auto;
     display: grid;
     padding: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(91px, 182px));
+    grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
     grid-gap: 5px;
     justify-content: center;
     scroll-behavior: smooth;
 }
 
 div.movie {
-    display: grid;
-    width: 182px;
-    height: 263px;
+    display: grid; 
     transition: 1s;
     filter: grayscale(50%);
     justify-content: center;
