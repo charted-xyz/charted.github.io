@@ -1,4 +1,5 @@
 function setup() {
+  pixelDensity(2);
   createCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
   noLoop();
   button = createButton("create new");

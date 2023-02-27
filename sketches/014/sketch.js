@@ -16,6 +16,7 @@ let colors = [
 let strokes = [1, 3, 5, 7, 9, 11];
 
 function setup() {
+  pixelDensity(2);
   createCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
   noLoop();
   button = createButton("create new");
