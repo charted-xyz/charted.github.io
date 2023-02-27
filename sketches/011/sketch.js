@@ -28,7 +28,7 @@ function draw() {
         } else if(i>width/2 && j>height/2) {
           stroke("#D11349");
         } else {
-          stroke("#3E454F")
+          stroke("#3E454F");
         }
         
         push();
